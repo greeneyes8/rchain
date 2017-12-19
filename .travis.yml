@@ -9,6 +9,8 @@ env:
   - SUBPROJECT=roscala
   - SUBPROJECT=rosette
   - SUBPROJECT=storage
+before_script: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+script: ./node/main.sh
 script: ./scripts/build-subproject.sh
 sudo: required
 install: ./scripts/install.sh
@@ -17,6 +19,4 @@ cache:
     - "$HOME/.ivy2/cache"
     - "$HOME/.sbt"
 
-before_dockerize: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-dockerize: ./node/main.sh
 
