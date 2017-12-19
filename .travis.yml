@@ -16,3 +16,7 @@ cache:
   directories:
     - "$HOME/.ivy2/cache"
     - "$HOME/.sbt"
+
+before_dockerize: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+dockerize: ./node/main.sh
+
