@@ -1,8 +1,8 @@
-from ubuntu:17.04
+from ubuntu:16.04
 
-run apt update && apt install -y dirmngr apt-transport-https openjdk-8-jdk bc
+run apt-get update && apt-get install -y dirmngr apt-transport-https openjdk-8-jdk bc
 run echo "deb https://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sbt.list && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823 
-run apt update && apt dist-upgrade -y && apt install -y sbt
+run apt-get update && apt-get dist-upgrade -y && apt-get install -y sbt
 
 copy . /src
 workdir /src

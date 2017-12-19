@@ -69,6 +69,6 @@ dockerfile in docker := {
 }
 
 imageNames in docker := Seq(
-  ImageName(s"rchain-${name.value}:latest"),
-  ImageName(s"rchain-${name.value}:v${version.value}")
+  ImageName(s"rchain/rchain-${name.value}:latest"),
+  ImageName(s"rchain/rchain-${name.value}:v${version.value}")
 )
